@@ -78,5 +78,5 @@ minikube delete --profile=minikube
 minikube start --profile=minikube --force
 ```
 
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/f44819ff-59ff-4400-9b0b-1e74b1a7f13b)
 
