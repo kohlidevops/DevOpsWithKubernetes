@@ -28,9 +28,9 @@ Install Kubernetes using MiniKube
 
 **5. Install Docker Engine**
 
-    sudo apt-get 
+    sudo apt-get update
     
-    updatesudo apt-get install docker-ce docker-ce-cli containerd.io
+    sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 **6. verify Docker version**
 
