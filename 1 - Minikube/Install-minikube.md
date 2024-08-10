@@ -46,7 +46,9 @@ Install Kubernetes using MiniKube
 
 **1. Download Binay**
 
-    curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64chmod +x minikube-linux-amd64
+    curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+    
+    chmod +x minikube-linux-amd64
 
 **2. Install Minikube**
 
