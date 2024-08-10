@@ -77,3 +77,6 @@ If its not working then
 minikube delete --profile=minikube
 minikube start --profile=minikube --force
 ```
+
+![Uploading image.png…]()
+
