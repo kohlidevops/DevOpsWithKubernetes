@@ -70,3 +70,10 @@ Install Kubernetes using MiniKube
 **5. Get Cluster Information**
 
     kubectl config view
+
+If its not working then 
+
+```
+minikube delete --profile=minikube
+minikube start --profile=minikube --force
+```
