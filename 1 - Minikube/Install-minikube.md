@@ -15,7 +15,7 @@ Install Kubernetes using MiniKube
 
     sudo apt-get update
 
-    sudo apt-get install \    apt-transport-https \    ca-certificates \    curl \    gnupg \    lsb-release
+    sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release
 
 
 **3. Add Docker’s official GPG key:**
