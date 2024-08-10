@@ -62,7 +62,9 @@ Install Kubernetes using MiniKube
 
 **4. Start Kubernetes Cluster**
 
-    sudo apt install conntracksudo minikube start --vm-driver=none
+    sudo apt install conntrack
+    
+    sudo minikube start --vm-driver=none
 
 
 **5. Get Cluster Information**
