@@ -8,19 +8,19 @@ Install Kubernetes using MiniKube
 
 1. Uninstall old versions
 
-sudo apt-get remove docker docker-engine docker.io containerd runc
+    sudo apt-get remove docker docker-engine docker.io containerd runc
 
 
 2. Update the apt package index
 
-sudo apt-get update
+    sudo apt-get update
 
     sudo apt-get install \    apt-transport-https \    ca-certificates \    curl \    gnupg \    lsb-release
 
 
 3. Add Docker’s official GPG key:
 
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
 
 4. Use the following command to set up the stable repository
@@ -42,7 +42,7 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o 
 
 1. Download the latest release
 
-curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+    curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 
 
 2. Install kubectl
@@ -51,7 +51,7 @@ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stabl
 
 3. Test to ensure the version you installed is up-to-date:
 
-kubectl version --client
+    kubectl version --client
 
 
 
@@ -63,12 +63,12 @@ kubectl version --client
 
 2. Install Minikube
 
-sudo install minikube-linux-amd64 /usr/local/bin/minikube
+    sudo install minikube-linux-amd64 /usr/local/bin/minikube
 
 
 3. Verify Installation
 
-minikube version
+    minikube version
 
 
 4. Start Kubernetes Cluster
@@ -78,4 +78,4 @@ minikube version
 
 5. Get Cluster Information
 
-kubectl config view
+    kubectl config view
