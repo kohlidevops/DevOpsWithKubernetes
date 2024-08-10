@@ -18,21 +18,11 @@ Install Kubernetes using MiniKube
     sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release
 
 
-**3. Add Docker’s official GPG key:**
+**3. Install Docker**
 
-    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+    sudo apt-get install docker.io -y
 
-**4. Use the following command to set up the stable repository**
-
-    echo \  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
-**5. Install Docker Engine**
-
-    sudo apt-get update
-    
-    sudo apt-get install docker-ce docker-ce-cli containerd.io
-
-**6. verify Docker version**
+**4. verify Docker version**
 
     docker --version
 
