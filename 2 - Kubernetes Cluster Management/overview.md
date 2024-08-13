@@ -23,6 +23,8 @@ In a stacked etcd topology, the etcd members run on the same nodes as the Kubern
 
 In an external etcd topology, the etcd members run on separate nodes, independent of the Kubernetes control plane nodes. The etcd cluster is decoupled from the control plane, often running on dedicated machines.
 
+## Kubernetes Management Tools
+
 **1. kubectl**
 
 kubectl is the command-line tool used to interact with Kubernetes clusters. It allows you to deploy applications, inspect and manage cluster resources, and view logs and events. It's the primary tool for managing Kubernetes clusters.
@@ -78,3 +80,5 @@ Layered configuration management with bases and overlays.
 Ability to generate ConfigMaps and Secrets from files or literals.
 Native support in kubectl for applying Kustomize configurations.
 These tools are essential in different stages of Kubernetes management, from cluster setup (kubeadm, Minikube) to application deployment and configuration management (kubectl, Helm, Kompose, Kustomize).
+
+
