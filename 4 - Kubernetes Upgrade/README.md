@@ -1,4 +1,4 @@
-# To upgrade the Kubernetes Cluster using kubeadm
+# To upgrade the Kubernetes Cluster - Control plane and Data plane using kubeadm
 
 First install the kubernetes cluster setup using below link
 
