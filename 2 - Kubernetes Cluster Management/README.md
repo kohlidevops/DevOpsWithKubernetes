@@ -78,7 +78,7 @@ echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.
 sudo apt-get update -y
 
 sudo apt-get install -y kubelet kubeadm kubectl
-sudo apt-mark hold kubelet kubeadm kubect
+sudo apt-mark hold kubelet kubeadm kubectl
 ```
 
 ## Install on Master node only
@@ -97,6 +97,20 @@ Kubeadm init command to initialize the setup
 
 ```
 sudo kubeadm init --apiserver-advertise-address=$IPADDR  --apiserver-cert-extra-sans=$IPADDR  --pod-network-cidr=$POD_CIDR --node-name $NODENAME --ignore-preflight-errors Swap
+```
+
+##### If you are facing issues like below
+
+````
+error execution phase preflight: [preflight] Some fatal errors occurred:
+        [ERROR FileContent--proc-sys-net-bridge-bridge-nf-call-iptables]: /proc/sys/net/bridge/bridge-nf-call-iptables does not exist
+```
+Then execute below command to resolve then continue
+
+```
+modprobe br_netfilter
+echo 1 > /proc/sys/net/bridge/bridge-nf-call-iptables
+echo 1 > /proc/sys/net/ipv4/ip_forward
 ```
 
 To use the following commands from the output to create the kubeconfig in master so that you can use kubectl to interact with cluster API.
