@@ -1,4 +1,6 @@
-![image](https://github.com/user-attachments/assets/dd28e9dd-3390-4ca5-81ac-26b8aab33abf)# Maintenance windows Kubernetes Cluster
+# Maintenance windows Kubernetes Cluster
+
+![image](https://github.com/user-attachments/assets/dd28e9dd-3390-4ca5-81ac-26b8aab33abf)
 
 **Node Draining**
 
