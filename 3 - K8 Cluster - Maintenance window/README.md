@@ -1,4 +1,4 @@
-# Maintenance windows Kubernetes Cluster
+![image](https://github.com/user-attachments/assets/dd28e9dd-3390-4ca5-81ac-26b8aab33abf)# Maintenance windows Kubernetes Cluster
 
 **Node Draining**
 
@@ -65,11 +65,67 @@ kubectl apply -f pods.yaml
 
 ![image](https://github.com/user-attachments/assets/810995fd-4799-4f9a-8af5-e3511c4c24cf)
 
-deployment.yaml file
+create a deployment.yaml file inside a nodedraining folder
 
+```
+https://github.com/kohlidevops/DevOpsWithKubernetes/blob/main/3%20-%20K8%20Cluster%20-%20Maintenance%20window/deployment.yaml
 ```
 
 ```
+kubectl apply -f deployment.yaml
+kubect get nodes
+kubectl get pods -o wide
+```
+
+![image](https://github.com/user-attachments/assets/ab6f65b2-e870-4f48-991f-74a58f92dd12)
+
+**To drain the node**
+
+```
+kubectl drain <node-name>
+```
+
+![image](https://github.com/user-attachments/assets/9a248770-26a6-4187-8796-21f8a5354b56)
+
+We are getting two errors - cannnot delete the pods are declared and cannot delete the pods which has daemons like calico proxy.
+
+```
+kubectl drain <node-name> --ignore-daemonsets
+```
+
+still getting error with pods declared For this we can run below command to evict the worker node from the k8 cluster.
+
+```
+kubectl drain <node-name> --ignore-daemonsets --force
+```
+
+Now scheduling has been disabled for one node but still it is ready state means no new resource has been schedule to this particular node.
+
+![image](https://github.com/user-attachments/assets/558286c4-b7e9-4a0a-9ad8-32001463ae08)
+
+If you check with list pods commands, then you can see the new pod has been reschedule in the available node.
+
+```
+kubectl get pods -o wide
+```
+
+![image](https://github.com/user-attachments/assets/791cdbde-a237-4aaf-8bef-a1a2cd57041a)
+
+When you drain the node, the pods which are running on the particular node, they will terminate gracefully and rescheduled on the available worker node.
+
+pods.yaml -> which are executed explictly on the worker node that is getting deleted when you drain the node.
+deployment.yaml -> which are deployed by deployment file contains replicas (that replica controller is stateful). So this should be rescheduled to other available worker nodes
+
+**To rejoin (uncordon) the worker node to the k8 cluster**
+
+After you’ve completed the maintenance and want to bring the node back into service, you need to mark the node as schedulable again. This is done with the kubectl uncordon command
+
+```
+kubectl uncordon <node-name>
+kubectl get nodes
+```
+
+![image](https://github.com/user-attachments/assets/8bda18a5-7a0a-4c97-955a-75e85c3f14c1)
 
 
 
