@@ -101,17 +101,15 @@ sudo kubeadm init --apiserver-advertise-address=$IPADDR  --apiserver-cert-extra-
 
 ##### If you are facing issues like below
 
-````
-error execution phase preflight: [preflight] Some fatal errors occurred:
+        error execution phase preflight: [preflight] Some fatal errors occurred:
         [ERROR FileContent--proc-sys-net-bridge-bridge-nf-call-iptables]: /proc/sys/net/bridge/bridge-nf-call-iptables does not exist
-```
-Then execute below command to resolve then continue
 
-```
-modprobe br_netfilter
-echo 1 > /proc/sys/net/bridge/bridge-nf-call-iptables
-echo 1 > /proc/sys/net/ipv4/ip_forward
-```
+
+#### Then execute below command to resolve then continue
+
+        modprobe br_netfilter
+        echo 1 > /proc/sys/net/bridge/bridge-nf-call-iptables
+        echo 1 > /proc/sys/net/ipv4/ip_forward
 
 To use the following commands from the output to create the kubeconfig in master so that you can use kubectl to interact with cluster API.
 
