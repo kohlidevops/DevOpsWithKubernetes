@@ -63,6 +63,14 @@ Then run this pods.yaml file on the master node
 kubectl apply -f pods.yaml
 ```
 
+![image](https://github.com/user-attachments/assets/810995fd-4799-4f9a-8af5-e3511c4c24cf)
+
+deployment.yaml file
+
+```
+
+```
+
 
 
 
