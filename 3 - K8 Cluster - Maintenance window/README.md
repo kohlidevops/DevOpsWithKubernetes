@@ -67,3 +67,4 @@ kubectl apply -f pods.yaml
 
 
 
+
