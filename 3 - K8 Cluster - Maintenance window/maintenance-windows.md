@@ -47,8 +47,23 @@ Command: kubectl uncordon <node-name>
   
 These commands are useful for managing the availability and scheduling of nodes in your Kubernetes cluster, especially during maintenance or scaling operations.
 
-Demo
+**Demo**
 
 Lets create a directory called nodedraining in master node and create a file called pod.yaml inside the nodedraining folder.
 
-pods.yaml file - 
+pods.yaml file
+
+```
+https://github.com/kohlidevops/DevOpsWithKubernetes/blob/main/3%20-%20K8%20Cluster%20-%20Maintenance%20window/pods.yaml
+```
+
+Then run this pods.yaml file on the master node
+
+```
+kubectl apply -f pods.yaml
+```
+
+
+
+
+
