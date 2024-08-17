@@ -2,6 +2,27 @@
 
 ## How can we create a Service Account and how can we create a Rolebinding for Service Account?
 
+### Service Account
+
+Service Accounts are used to grant Pods permissions to perform actions on Kubernetes resources based on the associated Role or ClusterRole.
+
+### API Token
+
+Each Service Account is associated with an API token, which is mounted into Pods. This token is used by applications within the Pods to authenticate against the Kubernetes API server.
+
+### Role and RoleBinding
+
+**Role:** Defines a set of permissions within a specific namespace.
+
+**RoleBinding:** Associates a Role with a Service Account within a namespace.
+
+### ClusterRole and ClusterRoleBinding
+
+**ClusterRole:** Defines a set of permissions across the entire cluster.
+
+**ClusterRoleBinding:** Associates a ClusterRole with a Service Account across the cluster.
+
+
 ##### continue of below topic
 ```
 https://github.com/kohlidevops/DevOpsWithKubernetes/tree/main/6%20-%20RBAC%20in%20K8%20Cluster
