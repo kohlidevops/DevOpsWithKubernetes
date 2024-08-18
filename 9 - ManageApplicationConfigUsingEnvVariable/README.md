@@ -58,7 +58,7 @@ kubectl describe secret example-secret.yaml
 
 => You can delete the secret YAML file once deployed in cluster. So Kubernetes knews the value of secret. No one can access and decode the secret value
 
-## To create a 
+## To create a application pod
 
 ```
 cd pods_and_container
