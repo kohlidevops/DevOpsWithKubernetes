@@ -80,7 +80,7 @@ kubectl get pods
 
 ![image](https://github.com/user-attachments/assets/14c9be81-3d26-4905-941e-6dad640ced03)
 
-To execute and ssh to configmap pod
+_To execute and ssh to application pod_
 
 To ssh to this pod and check the environment variable whether its mapped to configmap and secrets
 
