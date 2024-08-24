@@ -60,11 +60,25 @@ kubectl create configmap nginx-config-file --from-file nginx.conf
 kubectl describe configmap nginx-config-file
 ```
 
-To create a pod
+**To create a pod**
 
 ```
 nano nginx-pod.yaml
 
 //you can use below link to copy/paste the nginx-pod.yaml file
 
+https://github.com/kohlidevops/DevOpsWithKubernetes/blob/main/12%20-%20Create%20ConfigMap%20and%20Secret%20From%20a%20File/nginx-pod.yaml
+
+kubectl apply -f nginx-pod.yaml
+kubectl get pods -o wide
+```
+
+**To access the nginx with authentication**
+
+```
+curl <pods-ip>
+//It will not access - Authorization faile
+curl -u user:test123 <pods-ip>
+//Now can access
+```
 
