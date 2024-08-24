@@ -47,7 +47,24 @@ kubectl describe secrets nginx-htpasswd
 
 We can remove the secret file .htpasswd from the node. Becasue secrets has been created and no point to store the file from the disk.
 
-To create a ConfigMap
+**To create a ConfigMap**
 
 ```
 nano nginx.conf
+
+//you can use below link to copy/paste the nginx.conf file
+
+https://github.com/kohlidevops/DevOpsWithKubernetes/blob/main/12%20-%20Create%20ConfigMap%20and%20Secret%20From%20a%20File/nginx.conf
+
+kubectl create configmap nginx-config-file --from-file nginx.conf
+kubectl describe configmap nginx-config-file
+```
+
+To create a pod
+
+```
+nano nginx-pod.yaml
+
+//you can use below link to copy/paste the nginx-pod.yaml file
+
+
