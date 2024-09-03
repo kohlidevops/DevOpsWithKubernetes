@@ -54,10 +54,6 @@ _What will happend if the container is reaching the cpu limits? The kubernetes w
 
 ### Demo - Request Limit
 
-```
-
-```
-
 SSH to K8 master node
 
 ```
