@@ -48,6 +48,8 @@ periodSeconds: 3
 timeoutSeconds: 1
 ```
 
+**Startup Probe**
+
 ➢ Setting up Liveness probe is very risky with Application which have Long StartUp Time.
 
 ➢ StartUp probe runs at container StartUp and stop running once container success.
@@ -56,3 +58,29 @@ timeoutSeconds: 1
 
 _Suppose you have a complex application that needs a long time to initialize, like a database server that performs initial setup before it can accept connections. If you only had a liveness probe, Kubernetes might mistakenly restart the container before the application is fully ready. Here Startup probe came into the picture. The startup probe prevents the liveness probe from restarting the container before the application has fully started._
 
+```
+startupProbe:
+httpGet:
+path: /health.html
+port: 8080
+failureThreshold: 30
+periodSeconds: 10
+```
+
+**httpGet:** This specifies that Kubernetes will perform an HTTP GET request to the /health.html path on port 8080 to determine if the application is ready.
+
+**failureThreshold: 30:** This means that Kubernetes will allow up to 30 consecutive failures of the HTTP GET request before it decides that the startup has failed. In other words, if the /health.html endpoint does not respond successfully for 30 consecutive checks, Kubernetes will consider the container startup as failed.
+
+**periodSeconds: 10:** This specifies how often Kubernetes will perform the probe. In this case, every 10 seconds, Kubernetes will send the HTTP GET request to /health.html.
+
+Application will have a maximum of 5 minutes (30 * 10 = 300s) to finish its startup.
+
+**Readiness Probe**
+
+➢ Readiness is used to detect if a container is ready to accept traffic.
+
+➢ Sometimes application might need to load large data or configuration files during startup, or depend on external services after startup.
+
+➢ NO Traffic will be sent to a pod until container pass the Readiness Probe.
+
+➢ Readiness and liveness probes can be used in parallel for the same container.
