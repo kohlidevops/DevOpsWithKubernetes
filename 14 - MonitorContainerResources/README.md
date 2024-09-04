@@ -150,10 +150,33 @@ https://github.com/kohlidevops/DevOpsWithKubernetes/blob/main/14%20-%20MonitorCo
 kubectl appy -f liveness-hc-http-probe.yaml
 kubectl get pods -o wide
 kubect describe pod liveness-probe-http
-curl 
 ```
 
 my container has been succesfully created. because this liveness probe checking path(/) with port 80.
+
+## Demo - Startup Probe
+
+```
+cd pods_and_container
+nano startup-hc.yaml
+
+https://github.com/kohlidevops/DevOpsWithKubernetes/blob/main/14%20-%20MonitorContainerResources/startup-hc.yaml
+
+kubectl apply -f startup-hc.yaml
+kubectl get pods -o wide
+```
+
+**_How It Works_**
+
+_Startup Probe Execution:_ Kubernetes performs an HTTP GET request to the / path on port 80 of the container to check if the container is ready to handle traffic.
+
+_Initial Delay:_ There is no initialDelaySeconds specified, so the first probe starts immediately after the container is up.
+
+_Period:_ The probe is performed every 10 seconds.
+
+_Failure Threshold:_ If the HTTP request to / fails for 30 consecutive checks, Kubernetes will consider the container’s startup as failed. This threshold allows for a generous amount of time for the container to become ready.
+        
+![image](https://github.com/user-attachments/assets/6c839e42-9708-4349-a370-78e718972d03)
 
 
 
