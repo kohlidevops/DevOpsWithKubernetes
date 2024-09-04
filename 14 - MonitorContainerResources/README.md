@@ -178,5 +178,43 @@ _Failure Threshold:_ If the HTTP request to / fails for 30 consecutive checks, K
         
 ![image](https://github.com/user-attachments/assets/6c839e42-9708-4349-a370-78e718972d03)
 
+## Demo - Readiness Probe
+
+```
+sudo -i
+cd pods_and_container
+nano readiness-hc.yaml
+
+https://github.com/kohlidevops/DevOpsWithKubernetes/blob/main/14%20-%20MonitorContainerResources/readiness-hc.yaml
+
+kubectl apply -f readiness-hc.yaml
+kubectl get pods -o wide
+kubectl describe pod <pod-name>
+kubectl describe pod hc-probe
+```
+
+![image](https://github.com/user-attachments/assets/384f9d2d-c96a-4679-99ec-6e967707271a)
+
+Readiness probe is success that's why container has been running!
+
+![image](https://github.com/user-attachments/assets/8207e2ce-23e2-40e6-9bf9-d2a14f575f5c)
+
+Try to change the readiness port from 80 to 8080. My nginx applicaation is run with 80 port whereas now this readiness should probe the 8080. So it definetely failed.
+
+For this first delete the hc-probe pod and change the probe port as below
+
+![image](https://github.com/user-attachments/assets/5afaa81a-af80-4254-bc61-8923dec10e41)
+
+```
+kubectl delete pod hc-probe
+after change the port
+kubect apply -f readiness-hc.yaml
+kubectl describe pod <pod-name>
+kubectl describe pod hc-probe
+```
+
+![image](https://github.com/user-attachments/assets/6a704778-05e8-41bf-8151-337171cac41a)
+
+my health probe is failed - As a result my container has not been up and running!
 
 
