@@ -211,10 +211,12 @@ after change the port
 kubect apply -f readiness-hc.yaml
 kubectl describe pod <pod-name>
 kubectl describe pod hc-probe
+kubectl get pods -o wide
 ```
 
 ![image](https://github.com/user-attachments/assets/6a704778-05e8-41bf-8151-337171cac41a)
 
 my health probe is failed - As a result my container has not been up and running!
 
+![image](https://github.com/user-attachments/assets/8c4c96bc-213d-424e-9a37-aaaad17c2aad)
 
