@@ -21,3 +21,22 @@
 ➢ Init containers can securely run utilities or custom code that would otherwise make an app container image less secure.
 
 ➢ Populate Data at Shared Volume before Application StartUp.
+
+## Demo - Init Container
+
+SSH to master node
+
+```
+sudo -i
+cd pods_and_container
+nano init-container.yaml
+
+https://github.com/kohlidevops/DevOpsWithKubernetes/blob/main/17%20-%20ContainerInitialisation/init-container.yaml
+
+kubectl apply -f init-container.yaml
+kubect get pods -o wide
+kubectl logs example-pod -c main-app
+```
+
+![image](https://github.com/user-attachments/assets/2426fc71-fac3-458a-9f9c-b09c06b62c35)
+
