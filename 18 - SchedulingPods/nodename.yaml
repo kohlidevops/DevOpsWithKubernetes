@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-nodename
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+  nodeName: ip-172-31-47-215
