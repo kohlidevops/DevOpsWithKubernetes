@@ -18,6 +18,6 @@
 
 ➢ preferredDuringSchedulingIgnoredDuringExecution: 
 
-➢ preferredDuringScheduling - (It will try to schedule the pod on a node which will justify the affinity. But if due to any reason given, it is not getting that particular node or not getting the resource on that particular node, then it will schedule the pod on some other node. So here the port creation will not be in the pending state. It will execute or schedule the port on some another community's node.)
+➢ preferredDuringScheduling - (It will try to schedule the pod on a node which will justify the affinity. But if due to any reason given, it is not getting that particular node or not getting the resource on that particular node, then it will schedule the pod on some other node. So here the port creation will not be in the pending state. It will execute or schedule the port on some another node.)
 
 ➢ Also Called Soft Affinity.
