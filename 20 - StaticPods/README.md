@@ -27,7 +27,7 @@ sudo -i
 cd /etc/kubernetes/manifests/
 nano static-pod.yaml
 
-https://github.com/kohlidevops/DevOpsWithKubernetes/new/main/20%20-%20StaticPods
+https://github.com/kohlidevops/DevOpsWithKubernetes/blob/main/20%20-%20StaticPods/static-pod.yaml
 
 sudo systemctl start kubelet.service
 ```
