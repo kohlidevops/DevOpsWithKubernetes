@@ -34,12 +34,47 @@ nano nodeaffinity.yaml
 
 https://github.com/kohlidevops/DevOpsWithKubernetes/blob/main/21%20-%20NodeAffinity/nodeaffinity.yaml
 
-// Clearly we mentioned in the yaml file that pod should deployed on node which has label called ssd. You can check which node has ssd label
+// Clearly we mentioned in the yaml file that pod should deployed on node which has label called ssd. You can check which node has ssd label. (Here operator: In)
 
 kubectl get nodes --show-labels
 ```
 
 ![image](https://github.com/user-attachments/assets/e3710df2-5c6a-4995-a67f-c1b8abcd71a6)
+
+_To run nodeaffinity pod_
+
+```
+kubectl apply -f nodeaffinity.yaml
+kubect get pods -o wide
+kubectl get nodes
+```
+
+![image](https://github.com/user-attachments/assets/3212cb5a-6004-490d-983d-97addf1748de)
+
+//Its exactly deployed on the node which node has label called "ssd"
+
+## Demo - Node Anti-affinity
+
+SSH to master node
+
+```
+sudo -i
+cd pods_allocation
+kubectl get nodes
+nano nodeantiaffinity.yaml
+
+https://github.com/kohlidevops/DevOpsWithKubernetes/blob/main/21%20-%20NodeAffinity/nodeantiaffinity.yaml
+
+//Here we clearly mentioned the pod should be deployed which node doesn't have "ssd" label. - Because we prevent the scheduling pod on the particular node. (Here operator: NotIn)
+
+kubectl get nodes
+kubectl apply -f nodeantiaffinity.yaml
+kubectl get pods -o wide
+```
+
+![image](https://github.com/user-attachments/assets/43ea4eef-c252-4715-985f-18a02793f89e)
+
+Yes this pod has been deployed in worker node-01 which doesn't has "ssd" label.
 
 
 
