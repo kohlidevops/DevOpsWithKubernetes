@@ -21,3 +21,31 @@
 ➢ preferredDuringScheduling - (It will try to schedule the pod on a node which will justify the affinity. But if due to any reason given, it is not getting that particular node or not getting the resource on that particular node, then it will schedule the pod on some other node. So here the port creation will not be in the pending state. It will execute or schedule the port on some another node.)
 
 ➢ Also Called Soft Affinity.
+
+## Demo - Nodeaffinity
+
+SSH to master node
+
+```
+sudo -i
+cd pods_allocation
+kubectl get nodes
+nano nodeaffinity.yaml
+
+https://github.com/kohlidevops/DevOpsWithKubernetes/blob/main/21%20-%20NodeAffinity/nodeaffinity.yaml
+
+// Clearly we mentioned in the yaml file that pod should deployed on node which has label called ssd. You can check which node has ssd label
+
+kubectl get nodes --show-labels
+```
+
+![image](https://github.com/user-attachments/assets/e3710df2-5c6a-4995-a67f-c1b8abcd71a6)
+
+
+
+
+
+
+
+
+
