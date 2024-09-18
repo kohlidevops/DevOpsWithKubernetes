@@ -55,7 +55,7 @@ kubect get pods -o wide
 
 ![image](https://github.com/user-attachments/assets/0944e69f-5a03-4d08-b89e-a3479b363ba3)
 
-3 replicas as pods are running. What will happen if we delete any one of the pods?
+3 replicas as pods are running. What will happen if we delete any one of the pods? - It will re-create the pod.
 
 ```
 kubectl delete pod <pod-name>
