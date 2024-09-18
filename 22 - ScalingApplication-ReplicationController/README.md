@@ -14,7 +14,7 @@
 
 ➢ Stateless applications can be scaled horizontally, meaning new instances (Pods) can be created to handle more load without any dependency on previous requests.
 
-Examples: Web servers, front-end applications.
+_Examples:_ Web servers, front-end applications.
 
 **Stateful Applications**
 
@@ -22,7 +22,7 @@ Examples: Web servers, front-end applications.
 
 ➢ Stateful applications are typically scaled vertically (adding more resources to a single instance). However, stateful workloads can also be scaled horizontally with careful orchestration of persistent storage.
 
-Examples: Databases (e.g., MySQL, MongoDB), distributed systems like Kafka or Redis.
+_Examples:_ Databases (e.g., MySQL, MongoDB), distributed systems like Kafka or Redis.
 
 **Scaling in Kubernetes**
 
@@ -32,8 +32,3 @@ Examples: Databases (e.g., MySQL, MongoDB), distributed systems like Kafka or Re
 
 ➢ ReplicationController makes sure that a pod or a set of pods is always up and available.
 
-
-
-
-
-    Pod Management: New Pods can be created, destroyed, or replaced without affecting the user experience since no session data is stored within the Pods.
