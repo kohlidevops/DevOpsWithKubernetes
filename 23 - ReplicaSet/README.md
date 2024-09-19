@@ -151,6 +151,8 @@ kubectl delete pod mypod1
 kubectl get pods -o wide
 ```
 
+Now one of the new pod has been joined to the replicas group from replica-set yaml file.
+
 ![image](https://github.com/user-attachments/assets/967b5e66-5015-4175-a798-4c1ad17f13fc)
 
 
