@@ -67,3 +67,11 @@ kubectl describe service nginx-service
 You can access the nginx page with EC2 instance publicip:31010
 
 ![image](https://github.com/user-attachments/assets/311bdcb8-95c9-48b0-8f2a-28aabdf39d13)
+
+_To delete a service_
+
+```
+kubect get svc
+kubectl delete service <service-name>
+kubectl delete service nginx-service
+```
