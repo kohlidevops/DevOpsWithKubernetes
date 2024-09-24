@@ -25,3 +25,45 @@
 ➤ Load Balancer: Exposes the Service externally using a cloud provider’s load balancer. NodePort and ClusterIP Services, to which the external load balancer routes, are automatically created.
 
 ➤ External Name : Maps the Service to the contents of the external name field, by returning a CNAME record.
+
+## Lab - Services in Kubernetes
+
+_To create a pod manifest file_
+
+SSH to master
+
+```
+sudo -i
+kubect get nodes
+mkdir service
+cd service
+nano pod-manifest.yaml
+
+https://github.com/kohlidevops/DevOpsWithKubernetes/blob/main/25%20-%20Services/pod-manifest.yaml
+
+kubectl apply -f pod-manifest.yaml
+kubect get pods
+```
+
+![image](https://github.com/user-attachments/assets/c5a0bcd9-e3c3-4a1a-8480-d960e6ccf1fd)
+
+To create a service manifest file
+
+```
+cd service
+nano pod-service.yaml
+
+https://github.com/kohlidevops/DevOpsWithKubernetes/blob/main/25%20-%20Services/pod-service.yaml
+
+kubect apply -f pod-service.yaml
+kubect get service
+or
+kubect get svc
+kubectl describe service nginx-service
+```
+
+![image](https://github.com/user-attachments/assets/36804eba-9032-4324-8186-c7b00c6ec7d0)
+
+You can access the nginx page with EC2 instance publicip:31010
+
+![image](https://github.com/user-attachments/assets/311bdcb8-95c9-48b0-8f2a-28aabdf39d13)
