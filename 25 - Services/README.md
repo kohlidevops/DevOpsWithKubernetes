@@ -47,7 +47,7 @@ kubect get pods
 
 ![image](https://github.com/user-attachments/assets/c5a0bcd9-e3c3-4a1a-8480-d960e6ccf1fd)
 
-To create a service manifest file
+_To create a service manifest file_
 
 ```
 cd service
