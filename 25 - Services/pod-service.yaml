@@ -4,10 +4,10 @@ metadata:
   name: nginx-service
 spec:
   selector:
-    app: nginxpod
-    #It (nginxpod) should be match with your pod manifest file. It will create a service for pod which has nginxpod
+    app: nginxpod  # Matches the label from the pod
   ports:
   - protocol: TCP
-    port: 80
-    nodeport: 31010
-    targetPort: nginxport
+    port: 80        # Service port
+    nodePort: 31010 # NodePort to expose the service
+    targetPort: 80  # Actual container port, set to 80
+  type: NodePort    # Ensures the service is exposed via a NodePort
