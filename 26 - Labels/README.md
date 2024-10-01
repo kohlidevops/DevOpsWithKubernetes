@@ -61,6 +61,76 @@ To start master and 2 worker nodes for this lab and SSH to master node
 ```
 sudo -i
 kubectl get nodes
+kubectl get nodes --show-labels
+```
+
+![image](https://github.com/user-attachments/assets/254ff49e-155f-4140-a763-951359551d7b)
+
+//To check if any node has label called "disktype=ssd"
+
+//yes one node has it
+
+_To run the label-pod yaml file and check_
+
+//In my yaml file, I have mentioned nodeSelector - disktype: ssd
+
+```
+nano label-pod.yaml
+
+https://github.com/kohlidevops/DevOpsWithKubernetes/blob/main/26%20-%20Labels/label-pod.yaml
+
+kubectl apply -f label-pod.yaml
+kubectl get pods -o wide
+kubectl describe pod <pod-name>
+kubectl describe pod nginx-web
+```
+
+![image](https://github.com/user-attachments/assets/cea26139-942e-4232-a6e7-2339a0d0f59f)
+
+Yes it has been assigned to the particular worker node. If you describe then,
+
+![image](https://github.com/user-attachments/assets/19a3a0e5-b558-438a-ad4c-57069981ac64)
+
+_To remove the label and check again_
+
+```
+kubectl get nodes --show-labels
+kubectl label node <node-name> <label>-  //- should be add at the end of line
+kubectl label node ip-172-31-47-215 disktype-
+kubectl get nodes --show-labels
+kubectl delete pod <pod-name>
+kubectl delete pod nginx-web
+```
+
+_To run again the label-pod yaml file_
+
+```
+kubectl apply -f label-pod.yaml
+kubectl get pods -o wide
+kubectl describe pod nginx-web
+```
+
+![image](https://github.com/user-attachments/assets/65eb3e52-4735-437f-af08-4cabd27ba41e)
+
+Still its pending! If you describe it
+
+![image](https://github.com/user-attachments/assets/1efbc78e-bf48-46b4-afd5-84ded6689a77)
+
+_To add the label again_
+
+```
+kubectl label node ip-172-31-47-215 disktype=ssd
+kubectl get nodes --show-labels
+```
+
+![image](https://github.com/user-attachments/assets/de2c5a3d-8282-4f45-ba92-571d01beae2c)
+
+Now the pod has been assigned to the worker node - Because label has been assigned
+
+![image](https://github.com/user-attachments/assets/3e0e14f2-b81d-4144-be2b-91a1e0f42dfd)
+
+
+
 
 
 
