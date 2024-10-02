@@ -51,3 +51,37 @@ Each init container must complete before the next one is started.
 Exec: runs a specific command inside the container.
 HTTP: executes an HTTP request against a specific endpoint on the container.
 ```
+
+## Lab - Lifecycle of Pods
+
+SSH to master node
+
+```
+sudo -i
+kubectl get nodes
+cd lables
+nano lifecycle-pod.yaml
+
+https://github.com/kohlidevops/DevOpsWithKubernetes/blob/main/27%20-%20LifeCycleOfPods/lifecycle-pod.yaml
+
+kubectl apply -f lifecycle-pod.yaml
+kubect get pods -o wide
+```
+
+![image](https://github.com/user-attachments/assets/ef81becf-78fb-4f07-9b4e-8ee5bc015991)
+
+_If you want to describe the pod_
+
+![image](https://github.com/user-attachments/assets/3095dc4c-941d-4dbc-8436-81385d13fa46)
+
+_If you want to login to the container in the pod_
+
+```
+kubectl get pods
+kubectl exec -it <pod-name> -- /bin/bash
+kubectl exec -it lifecycle-demo -- /bin/bash
+//now you are in the pod
+cat /usr/share/message
+```
+
+![image](https://github.com/user-attachments/assets/67463fac-49a2-4b3b-94bf-babb59b8e55e)
