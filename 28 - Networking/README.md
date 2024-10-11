@@ -49,3 +49,14 @@ pod-ip.namespace-name.pod.cluster.local
 ```
 
 ## Lab
+
+```
+sudo -i
+kubectl get nodes
+mkdir networking
+cd networking
+sudo nano pods-dns.yaml
+
+https://github.com/kohlidevops/DevOpsWithKubernetes/blob/main/28%20-%20Networking/pods-dns.yaml
+
+
