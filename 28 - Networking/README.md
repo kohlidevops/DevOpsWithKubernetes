@@ -28,3 +28,24 @@ Every Pod gets its own IP address.
 
 ➢ K8s Nodes will remain NotReady until you install Network Plugin. And user won’t be able to Run Pods.
 
+## DNS In K8s
+
+➢ K8s Virtual Network uses DNS to allow PODs to locate other PODs and Services using Domain Name.
+
+➢ DNS runs as a Service in kube-system namespace.
+
+➢ Kubeadm/minikube use CoreDNS.
+
+➢ All Pods in Kubeadm cluster are automatically given a Domain Name like
+
+```
+pod-ip.namespace-name.pod.cluster.local
+```
+
+➢ Pod DNS in Default NameSpace with IP 190.168.0.20 would look like
+
+```
+190-168-0-20.default.pod.cluster.local
+```
+
+## Lab
