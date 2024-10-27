@@ -1,7 +1,5 @@
 # Maintenance windows Kubernetes Cluster
 
-![image](https://github.com/user-attachments/assets/dd28e9dd-3390-4ca5-81ac-26b8aab33abf)
-
 **Node Draining**
 
 Node draining is the process of safely evicting all the pods from a Kubernetes node before performing maintenance on that node or removing it from the cluster.
