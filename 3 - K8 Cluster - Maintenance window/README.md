@@ -114,6 +114,7 @@ kubectl get pods -o wide
 When you drain the node, the pods which are running on the particular node, they will terminate gracefully and rescheduled on the available worker node.
 
 pods.yaml -> which are executed explictly on the worker node that is getting deleted when you drain the node.
+
 deployment.yaml -> which are deployed by deployment file contains replicas (that replica controller is stateful). So this should be rescheduled to other available worker nodes
 
 **To rejoin (uncordon) the worker node to the k8 cluster**
