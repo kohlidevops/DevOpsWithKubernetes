@@ -33,20 +33,6 @@ After you’ve completed the maintenance and want to bring the node back into se
 kubectl uncordon <node-name>
 ```
 
-**Cordon**
-
-Purpose: Marks the node as unschedulable, preventing new pods from being scheduled on it.
-
-Command: kubectl cordon <node-name>
-
-**Uncordon**
-
-Purpose: Marks the node as schedulable again, allowing new pods to be scheduled on it.
-
-Command: kubectl uncordon <node-name>
-  
-These commands are useful for managing the availability and scheduling of nodes in your Kubernetes cluster, especially during maintenance or scaling operations.
-
 **Demo**
 
 Lets create a directory called nodedraining in master node and create a file called pod.yaml inside the nodedraining folder.
