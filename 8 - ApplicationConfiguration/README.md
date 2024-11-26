@@ -60,3 +60,6 @@ kubectl describe secrets <Secret_name>
 
 
 ![image](https://github.com/user-attachments/assets/9bb13667-7ef8-4cf9-bf18-7c44e18a88f6)
+
+![image](https://github.com/user-attachments/assets/63c712c7-5141-499b-9c43-548f4c43a2c1)
+
