@@ -10,11 +10,3 @@ spec:
   policyTypes:
   - Ingress
   - Egress
-  ingress:
-    - from:
-      - namespaceSelector:
-          matchLabels:
-            role: test-network-policy
-      ports:
-      - protocol: TCP
-        port: 80
