@@ -54,4 +54,41 @@ IP Block: This allows for more granular control, enabling or restricting traffic
 
 ➢ Pods become isolated by having a NetworkPolicy that selects them.
 
+## Network Policy Components
+
+➢ podSelector : Determines to which Pods in namespace the NetworkPolicy will be applied.
+
+➢ podSelector can select the Pods using Labels.
+
+➢ An empty podSelector selects all pods in the namespace.
+
+## Network Policy Components
+
+➢ Network Policy apply on Ingress, Egress and Both kind of Traffic.
+
+➢ Ingress : Incoming Network Traffic coming into the Pod from another Source.
+
+➢ Egress : Outgoing Network Traffic that leaving the Pod for another Destination.
+
+## To and From Selector - podSelector
+
+➢ fromSelector : Selects Ingress Traffic that will be allowed on Pods.
+
+➢ toSelector : Selects Egress Traffic that will be allowed from Pods
+
+![image](https://github.com/user-attachments/assets/bfc594a3-514b-46d1-888c-c1d0bb2d543b)
+
+## To and From Selector - namespaceSelector
+
+![image](https://github.com/user-attachments/assets/70389a28-bab4-49f1-bbe9-ceaf3cdee16d)
+
+## To and From Selector - ipBlock
+
+![image](https://github.com/user-attachments/assets/4899738f-adb6-4d64-a558-f07a7a58afb4)
+
+## Ports in Network Policy
+
+![image](https://github.com/user-attachments/assets/7723b0bc-eb6e-402d-9388-7075aec3dbea)
+
+
 
