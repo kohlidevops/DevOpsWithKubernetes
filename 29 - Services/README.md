@@ -7,8 +7,11 @@
 ➢ There are 4 Types:
 
 ○ ClusterIP
+
 ○ NodePort
+
 ○ LoadBalancer
+
 ○ ExternalName
 
 ## ClusterIP Service
