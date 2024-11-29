@@ -90,5 +90,82 @@ IP Block: This allows for more granular control, enabling or restricting traffic
 
 ![image](https://github.com/user-attachments/assets/7723b0bc-eb6e-402d-9388-7075aec3dbea)
 
+## Demo - Network Policies
 
+SSH to master node and execute below commands
 
+```
+sudo -i
+mkdir network_policy
+cd network_policy
+kubectl get nodes
+kubectl get ns
+```
+
+![image](https://github.com/user-attachments/assets/f64a1e47-f7f0-4039-9b44-e04608ca9eba)
+
+_To create a new namespace and add new label to the namespace_
+
+```
+kubectl create namespace network-policy
+kubectl get ns
+kubectl get ns --show-labels
+kubectl label namespace network-policy role=test-network-policy
+kubectl get ns --show-labels
+```
+
+![image](https://github.com/user-attachments/assets/1a2c02de-0706-4835-83df-63c8d8e95eaa)
+
+To deploy a network policy pod yaml
+
+```
+nano network-policy-pod.yaml
+
+https://github.com/kohlidevops/DevOpsWithKubernetes/blob/main/28%20-%20Networking/network-policy-pod.yaml
+
+kubectl apply -f network-policy-pod.yaml
+kubectl get pods -o wide -n network-policy
+```
+
+![image](https://github.com/user-attachments/assets/0b3f9c4c-9c9e-4ccb-978c-6a833da611ae)
+
+There are two pods running and try to access the nginx-pod from busybox-pod
+
+```
+kubectl exec -n network-policy busybox-pod -- curl <nginx-pod ip address>
+kubectl exec -n network-policy busybox-pod -- curl 192.168.243.186
+```
+
+we can access it. We still not apply any network policy means there is no port restriction and pods are non-isolated.
+
+![image](https://github.com/user-attachments/assets/6592e088-ea2a-4aae-b21a-f2a6be1cf9da)
+
+To create network policy and try to access the nginx pod
+
+```
+nano network-policy.yaml
+
+https://github.com/kohlidevops/DevOpsWithKubernetes/blob/main/28%20-%20Networking/network-policy.yaml
+
+kubectl apply -f network-policy.yaml
+kubectl get networkpolicy -n network-policy -o wide
+kubectl exec -n network-policy busybox-pod -- curl 192.168.243.186
+```
+
+![image](https://github.com/user-attachments/assets/899adc55-c146-4f94-9343-5c9dffaed2d8)
+
+We cant able to access the nginx pod from busy box. Because the we applied network policies, but not mentioned any ingress or egress rule. Now add the ingress rules in the same file using execute commands below and access the pod.
+
+```
+nano network-policy.yaml
+
+https://github.com/kohlidevops/DevOpsWithKubernetes/blob/main/28%20-%20Networking/network-policy1.yaml
+
+kubectl apply -f network-policy.yaml
+kubectl get networkpolicy -n network-policy -o wide
+kubectl exec -n network-policy busybox-pod -- curl 192.168.243.186
+```
+
+![image](https://github.com/user-attachments/assets/2cbe7f99-ea24-4883-be8e-cafeffdeb25a)
+
+Now I can able to access the pod. Because namespace selector and port added for exact namespace.
