@@ -79,4 +79,40 @@ If you try to access the service with port
 
 ![image](https://github.com/user-attachments/assets/b5622042-54cb-43e3-b30b-cdeeaa442ca8)
 
+_To deploy sample deployment in same k8 cluster_
+
+```
+nano pod-svc-test.yaml
+
+https://github.com/kohlidevops/DevOpsWithKubernetes/blob/main/29%20-%20Services/pod-svc-test.yaml
+
+kubectl apply -f pod-svc-test.yaml
+kubectl exec pod-svc-test -- curl nginx-service:8080
+```
+
+![image](https://github.com/user-attachments/assets/530cd32e-60e3-45d9-8968-0064dcd77e07)
+
+We can access now! Because we are accessing the service (clusterIP) from same cluster pod.
+
+## Service - NodePort
+
+_To create a nodeport-service manifest file_
+
+```
+nano nodeport-service.yaml
+
+https://github.com/kohlidevops/DevOpsWithKubernetes/blob/main/29%20-%20Services/nodeport-service.yaml
+
+kubectl apply -f nodeport-service.yaml
+kubectl get svc
+kubectl describe svc nginx-service-nodeport
+```
+
+![image](https://github.com/user-attachments/assets/75a0a8e7-9bfb-4641-932d-c7f12e845f11)
+
+Even you can access with any worker node public ip
+
+![image](https://github.com/user-attachments/assets/cac4b08c-b403-4f9c-bdcb-6c281cbe2070)
+
+
 
