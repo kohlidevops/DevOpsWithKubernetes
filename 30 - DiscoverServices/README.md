@@ -80,10 +80,9 @@ kubectl exec -n service-namespace svc-test-dns -- curl nginx-service.default.svc
 
 ![image](https://github.com/user-attachments/assets/933bb034-0c63-44cb-80d6-9e953c7d04d3)
 
-**
-Same namespace - It should use service-name to access
+**Same namespace - It should use service-name to access**
 
-Different namespace - It should use Fully Qualified Service Name to access**
+**Different namespace - It should use Fully Qualified Service Name to access**
 
 
 
