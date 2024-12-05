@@ -107,3 +107,11 @@ kubectl get ingress
 ![image](https://github.com/user-attachments/assets/1031f060-6d30-41fe-ad65-74f51da7bd0f)
 
 (If you map with real domain name, then it should work)
+
+```
+Ingress routing the traffic to the host
+Host routing the traffice to the service
+Service routing the traffic to the deployment
+Deployment routing the traffice to the pod
+Pod routing the traffic to the container
+```
