@@ -30,3 +30,80 @@
 
 ![image](https://github.com/user-attachments/assets/f1dba130-4212-407b-9961-d7d67c291417)
 
+## Lab - Ingress Controller
+
+SSH to master node
+
+_To deploy a nginx-deployment manifest file_
+
+```
+sudo -i
+mkdir ingress
+cd ingress
+nano nginx-deployment.yaml
+
+https://github.com/kohlidevops/DevOpsWithKubernetes/blob/main/31%20-%20IngressController/nginx-deployment.yaml
+
+kubectl apply -f nginx-deployment.yaml
+kubectl get deployment
+kubectl describe deployment nginx-official-deployment
+kubectl get pods -o wide
+```
+
+![image](https://github.com/user-attachments/assets/ff26a2d7-dcd5-44df-9219-199fb80eb3cb)
+
+_To deploy a service for the deployment_
+
+```
+nano nginx-deployment-service.yaml
+
+https://github.com/kohlidevops/DevOpsWithKubernetes/blob/main/31%20-%20IngressController/nginx-deployment-service.yaml
+
+kubectl apply -f nginx-deployment-service.yaml
+kubectl get svc
+```
+
+The nginx is now listening as 31303 port as NodePort
+
+![image](https://github.com/user-attachments/assets/8c35f3bb-75f3-4626-b3d8-efb4c70a1dbb)
+
+_To deploy a new deployment named magicalnginx-deployment manifest_
+
+```
+nano magicalnginx-nginx-deployment.yaml
+
+https://github.com/kohlidevops/DevOpsWithKubernetes/blob/main/31%20-%20IngressController/magicalnginx-nginx-deployment.yaml
+
+kubectl apply -f magicalnginx-nginx-deployment.yaml
+kubectl get deployment
+kubectl describe deployment magicalnginx-deployment
+kubectl get pods -o wide
+```
+
+_To deploy a service for magincalnginx deployment_
+
+```
+nano magicalnginx-deployment-service.yaml
+
+https://github.com/kohlidevops/DevOpsWithKubernetes/blob/main/31%20-%20IngressController/magicalnginx-deployment-service.yaml
+
+kubectl apply -f magicalnginx-deployment-service.yaml
+kubectl get svc
+```
+
+![image](https://github.com/user-attachments/assets/50a54880-bfd9-459d-afa0-b3c89df28002)
+
+_To deploy a Ingress Controller for these two services_
+
+```
+nano ingress-controller.yaml
+
+https://github.com/kohlidevops/DevOpsWithKubernetes/blob/main/31%20-%20IngressController/ingress-controller.yaml
+
+kubectl apply -f ingress-controller.yaml
+kubectl get ingress
+```
+
+![image](https://github.com/user-attachments/assets/1031f060-6d30-41fe-ad65-74f51da7bd0f)
+
+(If you map with real domain name, then it should work)
