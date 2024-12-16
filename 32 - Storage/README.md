@@ -152,3 +152,22 @@ If pod is deleted then files should not be exist_
 
 ![image](https://github.com/user-attachments/assets/fbaec520-e72a-4641-9da7-a788c6e46af3)
 
+## Lab - Common Volume Shared with multiple container within the Pod
+
+SSH to master node
+
+```
+sudo -i
+nano common-volume.yaml
+
+https://github.com/kohlidevops/DevOpsWithKubernetes/blob/main/32%20-%20Storage/common-volume.yaml
+
+kubectl apply -f common-volume.yaml
+kubectl get pods -o wide
+curl <pod-ip>
+```
+
+![image](https://github.com/user-attachments/assets/3b26c814-9071-46c3-b4a4-e98c70c428fb)
+
+
+
