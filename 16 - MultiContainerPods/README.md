@@ -12,7 +12,7 @@
 
 ➢ Container sharing a Pod, can interact with Shared resources.
 
-➢ Network : Containers share the same Network and communicate on any Port, unless the port is exposed to cluster.
+➢ Network : Containers share the same Network and communicate on any Port.
 
 ➢ Storage : Containers Can use shared Volume to share the data in a Pod.
 
