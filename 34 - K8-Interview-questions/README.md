@@ -4,8 +4,8 @@
 
 Kubernetes is an open-source container orchestration platform that automates the deployment, scaling, and management of containerized applications.
 
-**2. What is a container?
-**
+**2. What is a container?**
+
 A container is a lightweight, standalone, executable software package that includes everything needed to run an application, including code, runtime, system tools, libraries, and settings.
 
 **3. What are the benefits of using Kubernetes?**
