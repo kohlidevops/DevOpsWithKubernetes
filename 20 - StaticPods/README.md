@@ -41,7 +41,7 @@ kubectl get pods -o wide
 
 ![image](https://github.com/user-attachments/assets/ec411db2-811a-4b4f-bd2b-162be821b200)
 
-_What will happen if you delete this mirror pod from control plane? It will get delete, but we cant update or delete static pods via mirror pods_
+_What will happen if you delete this mirror pod from control plane?_
 
 ```
 kubectl get pods
@@ -53,6 +53,6 @@ It is still running
 
 ![image](https://github.com/user-attachments/assets/e5b77dec-7e18-4b11-8a86-d1ea8f1f2e2c)
 
-If you describe the pod, then nothing was happened in message!
+If you describe the pod!
 
 ![image](https://github.com/user-attachments/assets/f82a01ef-4c0f-47e6-b1a5-10c40c9388b4)
